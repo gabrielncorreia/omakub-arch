@@ -1,10 +1,11 @@
 # Add the official Docker repo
 yay -S docker --noconfirm
 
-sudo systemctl start docker.service
-
 # Install Docker engine and standard plugins
 yay -S docker-buildx docker-compose --noconfirm
+
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
 
 # Give this user privileged Docker access
 sudo usermod -aG docker ${USER}
