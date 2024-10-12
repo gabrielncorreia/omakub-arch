@@ -1,1 +1,1 @@
-sudo apt install -y vlc
+yay -S vlc mpv --noconfirm

@@ -1,11 +1,10 @@
 # History control
-shopt -s histappend
-HISTCONTROL=ignoreboth
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
 HISTSIZE=32768
-HISTFILESIZE="${HISTSIZE}"
-
-# Autocompletion
-source /usr/share/bash-completion/bash_completion
+SAVEHIST=32768
 
 # Set complete path
 export PATH="./bin:$HOME/.local/bin:$HOME/.local/share/omakub/bin:$PATH"
