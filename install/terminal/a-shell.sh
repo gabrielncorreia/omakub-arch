@@ -21,6 +21,12 @@ chsh -s $(which zsh)
 [ -f "~/.zsh" ] && mv ~/.zshrc ~/.zshrc.bak
 cat ~/.local/share/omakub/configs/bashrc >> ~/.zshrc
 
+# Installing the powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+# Adding the theme on the ~/.zshrc
+sed -i 's|^ZSH_THEME="[^"]*"|ZSH_THEME="powerlevel10k/powerlevel10k"|' ~/.zshrc
+
 # Load the PATH for use later in the installers
 source ~/.local/share/omakub/defaults/bash/shell
 
